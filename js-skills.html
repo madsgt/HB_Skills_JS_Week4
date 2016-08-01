@@ -98,7 +98,12 @@
 
 <script>
   "use strict";
-  // code here for above problem
+  var button = document.getElementById('popup-alert-button');
+
+  button.addEventListener('click', function() {
+    alert ("This is an alert!!!!!")
+
+  });
 </script>
 
 
@@ -117,6 +122,15 @@
 
 <script>
   "use strict";
+    var hello = document.getElementById('message-to-change');
+
+  var change = document.getElementById('change-hello-to-goodbye-button');
+
+  function changeHello(evt){
+    hello.innerHTML = "Goodbye!";
+  }
+
+  change.addEventListener('click', changeHello);
   // code here for above-problem
 </script>
 
@@ -147,6 +161,25 @@
 
 <script>
   "use strict";
+  var getClick = document.getElementById('prevent-form-submission-button');
+
+  function preventFormOnClick(evt){
+     evt.preventdefault();
+     alert("This is an alert!!!");
+     
+  }
+
+  getClick.addEventListener('click', preventFormOnClick);
+  
+
+  var getText = document.getElementById('favorite-color-field');
+
+  function preventForm(evt){
+    evt.preventdefault();
+    alert("This is an alert!!!");
+  }
+
+  getText.addEventListener('onchange', preventForm);
   // code here for above problem
 </script>
 
@@ -178,6 +211,25 @@
 
 <script>
   "use strict";
+
+  var button = document.getElementById('reverse-string-button');
+var text = button.value;
+
+function reverseString() {
+  var newMsg = ""
+  for (var i = text.length-1; i > -1, i--) {
+    newMsg += text[i];
+
+  }
+
+  return alert(newMsg);
+
+}
+
+button.addEventListener('click', reverseString);
+
+//MAdhuri Notes- I am getting error in console for this- Uncaught syntaxerror- unexpected token (unable to resolve)
+
 
 //  Here's a stub of a function you can use!
 
@@ -219,6 +271,12 @@
 
 <script>
   "use strict";
+
+   function alertMe(evt) {
+    alert("This is an alert!!");
+  }
+
+  $('.tricky-to-find').click(alertMe);
   // code here for above problem
 </script>
 
@@ -247,6 +305,13 @@
 
 <script>
   "use strict";
+    function changeImg() {
+    $('#kittenz-rule').attr('src', 'http://images4.fanpop.com/image/photos/14700000/So-cute-puppies-14749028-1600-1200.jpg');
+  }
+
+    $('#kittenz-rule').dblclick(changeImg);
+
+
   // put your code here
 </script>
 
@@ -281,6 +346,19 @@
 
 <script>
   "use strict";
+  
+  var button = $('#make-a-porcupine');
+
+    function chgImg(evt) {
+      $('#cute-porcupine-image').attr('src', 'http://2.bp.blogspot.com/-2Mkv1oB4Naw/UaMSZgpIPMI/AAAAAAAAAlw/9uGi_PZ4dxM/s1600/porcupine-wallpaper-5.jpg');
+      $('#cute-porcupine-image').fadeIn(1000);
+
+  }
+    function makePorcupine() {
+      setTimeout(chgImg, 3000);
+    }
+
+    button.click(makePorcupine);
   // put your code here
 </script>
 
